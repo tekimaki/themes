@@ -1,6 +1,24 @@
 <?php
 
+global $gBitSystem;
+
+// Package Requirements
+$gBitSystem->registerRequirements( THEMES_PKG_NAME, array(
+	'liberty'   => array( 'min' => '2.1.4' ),
+	'users'     => array( 'min' => '2.1.0' ),
+	'kernel'    => array( 'min' => '2.0.0' ),
+	'languages' => array( 'min' => '2.0.0' ),
+));
+
+$gBitSystem->registerPackageInfo( THEMES_PKG_NAME, array(
+	'description' => "The Themes package is an integral part of bitweaver which allows you to control the look and feel of you site.",
+	'license' => '<a href="http://www.gnu.org/licenses/licenses.html#LGPL">LGPL</a>',
+));
+
+
+// Install process
 global $gBitInstaller;
+if( is_object( $gBitInstaller ) ){
 
 $tables = array(
 	/* module_id			a unique id
@@ -46,11 +64,6 @@ $sequences = array (
 );
 $gBitInstaller->registerSchemaSequences( THEMES_PKG_NAME, $sequences );
 
-$gBitInstaller->registerPackageInfo( THEMES_PKG_NAME, array(
-	'description' => "The Themes package is an integral part of bitweaver which allows you to control the look and feel of you site.",
-	'license' => '<a href="http://www.gnu.org/licenses/licenses.html#LGPL">LGPL</a>',
-));
-
 //$gBitInstaller->registerSchemaTable( THEMES_PKG_NAME, '', '', TRUE );
 $gBitInstaller->registerPreferences( THEMES_PKG_NAME, array(
 //	array( THEMES_PKG_NAME,'themes_joined_js_css', 'y' ),
@@ -63,11 +76,4 @@ $gBitInstaller->registerPreferences( THEMES_PKG_NAME, array(
 	array( THEMES_PKG_NAME,'site_bot_bar', 'y' ),
 ));
 
-// Package Requirements
-$gBitInstaller->registerRequirements( THEMES_PKG_NAME, array(
-	'liberty'   => array( 'min' => '2.1.4' ),
-	'users'     => array( 'min' => '2.1.0' ),
-	'kernel'    => array( 'min' => '2.0.0' ),
-	'languages' => array( 'min' => '2.0.0' ),
-));
-?>
+}
