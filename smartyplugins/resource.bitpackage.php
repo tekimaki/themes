@@ -49,7 +49,7 @@ function smarty_resource_bitpackage_trusted( $pTplName, &$gBitSmarty ) {
 }
 
 function smarty_get_bitweaver_resources( $pTplName ) {
-	global $gBitThemes, $gNoForceStyle;
+	global $gBitThemes, $gNoForceStyle, $gLibertySystem;
 
 	$path = explode( '/', $pTplName );
 	$package = array_shift( $path );
@@ -66,6 +66,14 @@ function smarty_get_bitweaver_resources( $pTplName ) {
 		// we can't override these templates - they only exist in temp
 		$ret['package_template'] = constant( strtoupper( $package ).'_PKG_PATH' )."$subdir/$template";
 	} else {
+		// service content plugin paths
+		if( !empty($subdir) ){
+			$plugin_dirs = $gLibertySystem->getPackagePluginPaths( $package );
+			foreach( $plugin_dirs as $path ){
+				$ret[] = $path.'/'.$subdir.'templates/'.$template;
+			}
+		}
+
 		if( empty( $gNoForceStyle )) {
 			// look in themes/force/
 			$ret['force']        = THEMES_PKG_PATH."force/$package/$subdir$template";
