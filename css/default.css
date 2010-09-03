@@ -1,4 +1,7 @@
 /* $Header: /cvsroot/bitweaver/_bit_themes/css/default.css,v 1.4 2009/11/09 15:51:10 wjames5 Exp $ */
+/* site structure */
+#wrapper {clear:both}
+
 /* modules */
 .module       {padding:0.5em; margin:0.5em;}
 .module ul    {margin:0; padding:0; list-style:none;}
