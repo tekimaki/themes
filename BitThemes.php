@@ -1301,9 +1301,10 @@ class BitThemes extends BitBase {
 	 */
 	function loadTplFiles( $pFilename ) {
 		global $gBitSystem;
+		// these package templates will be included first
+		$prepend = array( 'kernel','themes' );
 		// these package templates will be included last
-		$prepend = array( 'kernel' );
-		$append = array( 'themes' );
+		$append = array();
 		$anti = $mid = $post = array();
 		foreach( $gBitSystem->mPackages as $package => $info ) {
 			if( !empty( $info['path'] )) {
