@@ -51,7 +51,14 @@ function smarty_function_formfeedback( $params, &$gBitSmarty ) {
 				}
 
 				foreach( $val as $valText ) {
-					$feedback .= '<p id="fat'.rand( 0, 10000 ).'" class="fade-'.$color.' '.$key.'">'.smarty_function_biticon( $biticon, $gBitSmarty ).' '.$valText.'</p>';
+					if (is_array($valText)) {
+				  		foreach( $valText as $subkey => $subValText ) {
+
+							$feedback .= '<p id="fat'.rand( 0, 10000 ).'" class="fade-'.$color.' '.$key.' '.$subkey.'">'.smarty_function_biticon( $biticon, $gBitSmarty ).' '.$subValText.'</p>';
+						}
+					} else {
+						$feedback .= '<p id="fat'.rand( 0, 10000 ).'" class="fade-'.$color.' '.$key.'">'.smarty_function_biticon( $biticon, $gBitSmarty ).' '.$valText.'</p>';
+					}
 				}
 
 			} else {
@@ -60,7 +67,13 @@ function smarty_function_formfeedback( $params, &$gBitSmarty ) {
 				 * otherwise we'll render the color as text. -wjames5
 				 */ 
 				if ( $key != 'color' ){
-					$feedback .= '<p class="'.$key.'">'.$val.'</p>';
+					if (is_array($val)) {
+				  		foreach( $val as $subkey => $val ) {
+							$feedback .= '<p class="'.$key.' '.$subkey.'">'.$val.'</p>';
+						}
+					  } else {
+					  	$feedback .= '<p class="'.$key.'">'.$val.'</p>';
+					  }
 				}
 			}
 		}
