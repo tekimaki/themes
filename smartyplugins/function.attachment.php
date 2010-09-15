@@ -36,6 +36,14 @@ function smarty_function_attachment( $pParams, &$gBitSmarty ) {
 		return $ret;
 	}
 
+	// override the icon since thumbnails dont use bit icon 
+	// this allows one to override the mime icons in liberty
+	if( !empty( $pParams['thumbnail_url'] ) ){
+		foreach( $att['thumbnail_url'] as $key=>$url ){
+			$att['thumbnail_url'][$key] = $pParams['thumbnail_url'];
+		}
+	}
+
 	if( !empty( $att['is_mime'] )) {
 		global $gLibertySystem;
 		// convert parameters into display properties
