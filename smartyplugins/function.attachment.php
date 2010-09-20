@@ -14,8 +14,9 @@
  * Name: attachment 
  * ------------------------------------------------------------- 
  *
- * @param int id attachment_id
- * @param string size the thumbnail size (can be 'original')
+ * @param int 		id 		then attachment_id
+ * @param string 	size 	the thumbnail size (can be 'original')
+ * @param string	link	what to link to [false, <thumbsize>, download (direct download), <url>] 
  */ 
 
 function smarty_function_attachment( $pParams, &$gBitSmarty ) {
