@@ -1,4 +1,5 @@
-<?php
+<?php /* -*- Mode: php; tab-width: 4; indent-tabs-mode: t; c-basic-offset: 4; -*- */
+/* vim: :set fdm=marker : */
 /**
  * @version $Header$
  * @package themes
@@ -1304,7 +1305,7 @@ class BitThemes extends BitBase {
 	 * @return void
 	 */
 	function loadTplFiles( $pFilename ) {
-		global $gBitSystem;
+		global $gBitSystem, $gLibertySystem;
 		// these package templates will be included first
 		$prepend = array( 'kernel','themes' );
 		// these package templates will be included last
@@ -1324,6 +1325,32 @@ class BitThemes extends BitBase {
 					}
 				}
 			}
+
+			// Now check for any plugin templates
+			$paths = $gLibertySystem->getPackagePluginPaths( $package );
+			foreach ($paths as $path) {
+				/* Look at plugins in the directory */
+				if (is_readable($path) ) {
+					if ($handle = opendir($path)) {					
+						while (false !== ($plugin = readdir($handle))) {
+							if (is_dir($path.'/'.$plugin) && $plugin != "." && $plugin != "..") {
+								$file = $path.'/'.$plugin."/templates/{$pFilename}.tpl";
+								$out = "bitpackage:{$package}/{$plugin}/{$pFilename}.tpl";
+								if( is_readable( $file )) {
+									if( in_array( $package, $prepend )) {
+										$anti[] = $out;
+									} elseif( in_array( $package, $append )) {
+										$post[] = $out;
+									} else {
+										$mid[] = $out;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
 		}
 		$this->mAuxFiles['templates'][$pFilename] = array_merge( $anti, $mid, $post );
 	}
