@@ -1,0 +1,59 @@
+---
+themes: 
+  version: 2.0.0
+  required: false
+  requirements: 
+    liberty: 
+      min: 2.1.4
+    users: 
+      min: 2.1.0
+    kernel: 
+      min: 2.0.0
+    languages: 
+      min: 2.0.0
+  description: >
+    The Themes package is an integral part
+    of bitweaver which allows you to control
+    the look and feel of you site.
+  license: 
+    name: LGPL
+    description: Licensed under the GNU LESSER GENERAL PUBLIC LICENSE.
+    url: http://www.gnu.org/copyleft/lesser.html
+  homeable: false
+  tables: 
+    themes_layouts: |
+      
+      module_id I4 PRIMARY,
+      title C(255),
+      layout C(160) NOTNULL DEFAULT 'kernel',
+      layout_area C(1) NOTNULL,
+      module_rows I4,
+      module_rsrc C(250) NOTNULL,
+      params C(255),
+      cache_time I8,
+      groups C(255),
+      pos I4 NOTNULL DEFAULT '1'
+      
+    themes_custom_modules: |
+      
+      name C(40) PRIMARY NOTNULL,
+      title C(200),
+      data X
+      
+  indexes: 
+    themes_layouts_module_idx: 
+      table: themes_layouts
+      cols: module_id
+      opts: 
+  sequences: 
+    themes_layouts_module_id_seq: 
+      start: 1
+  preferences: 
+    site_slide_style: basic
+    style: basic
+    site_style_layout: gala_13
+    site_icon_style: tango
+    site_top_bar_dropdown: 'y'
+    site_bot_bar: 'y'
+    menu_languages: n
+    menu_users: n
