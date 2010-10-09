@@ -13,7 +13,7 @@
 <script type="text/javascript">/* <![CDATA[ */
 	BitSystem = {ldelim}
 		"urls":{ldelim}
-		{foreach from=$gBitSystem->mPackages item=pkgInfo key=pkg}
+		{foreach from=$gBitSystem->mPackagesConfig item=pkgInfo key=pkg}
 			{if $gBitSystem->isPackageActive( $pkg )}
 				"{$pkg}":"{$pkgInfo.url}",
 			{/if}
