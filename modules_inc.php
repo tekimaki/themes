@@ -21,6 +21,8 @@ if( $gBitThemes->mLayout && empty( $gHideModules )) {
 				if( !empty( $r['visible'] )) {
 					// @TODO MODULE UPGRADE under new module organization this is not reliable as tpls are in sub dir in modules/ change this when upgrade is complete
 					list( $package, $template ) = explode(  '/', $r['module_rsrc'] );
+					preg_match( "/^(.*)\.tpl$/", $template, $match );
+					$r['module_name'] = $match[1];
 					// deal with custom modules
 					if( $package == '_custom:custom' ) {
 						global $gBitLanguage;
