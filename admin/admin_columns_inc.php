@@ -42,13 +42,11 @@ $displayModes = array(
 $gBitSmarty->assign( 'displayModes', $displayModes );
 
 // hide columns in individual packages
-foreach( $gBitSystem->mPackages as $key => $package ) {
-	if( !empty( $package['installed'] ) ) {
-		if( $package['name'] == 'kernel' ) {
-			$package['name'] = tra( 'Site Default' );
-		}
-		$packageColumns[strtolower( $key )] =  ucfirst( $package['name'] );
+foreach( $gBitSystem->mPackagesConfig as $key => $package ) {
+	if( $package['name'] == 'kernel' ) {
+		$package['name'] = tra( 'Site Default' );
 	}
+	$packageColumns[strtolower( $key )] =  ucfirst( $package['name'] );
 }
 asort( $packageColumns );
 $gBitSmarty->assign( 'packageColumns', $packageColumns );
