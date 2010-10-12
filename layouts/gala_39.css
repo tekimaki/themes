@@ -1,3 +1,4 @@
+div.container,
 div#container	{width:900px;margin:0 auto}
 div#navigation	{float:left;width:450px}
 div#extra		{float:right;width:450px}

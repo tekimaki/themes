@@ -1,3 +1,4 @@
+div.container,
 div#container				{width:900px;margin:0 auto}
 div#wrapper					{float:left;width:100%}
 div.blocks3  #content		{margin-right: 440px;}
