@@ -44,6 +44,7 @@ function smarty_function_blurb( $pParams, &$gBitSmarty ) {
 	}
 	
 	//Check if title should be displayed and assign it appropriatly
+	$ret .= '<div class="blurb" id="'.$pParams['blurb_guid'].'">';
 	if( !empty($pParams['title']) ) {
 		$ret .= "<h3>".$BitBlurb ->mInfo['title']."</h3>";
 	}
@@ -52,6 +53,7 @@ function smarty_function_blurb( $pParams, &$gBitSmarty ) {
 	// Allow user to edit blurb if they have permission to do so
 	if( $BitBlurb->isValid() && ($BitBlurb->verifyUpdatePermission() || $BitBlurb->verifyCreatePermission())){
 		$ret .="<a href=\"".BLURB_PKG_URL."edit_blurb.php?blurb_id=".$blurb_id."\" >".smarty_function_biticon(array('ipackage'=>'icons', 'iname'=>'accessories-text-editor', 'iexplain'=>'Edit'.$pParams['blurb_guid']),$gBitSmarty)."</a>";
-	}	
+	}
+	$ret .= "</div>";
 	return $ret;
 }
