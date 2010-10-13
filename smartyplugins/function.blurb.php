@@ -32,7 +32,7 @@ function smarty_function_blurb( $pParams, &$gBitSmarty ) {
 	$BitBlurb  = new BitBlurb( );
 	
 	//Grab the blurb id from the database. If not exist, return error
-	$blurb_id = $BitBlurb->getIdByLookUp(array("blurb_guid"=>$pParams['blurb_guid']));
+	$blurb_id = BitBlurb::getIdByField('blurb_guid',$pParams['blurb_guid']);
 	if( empty( $blurb_id ) ) {
 		@error_log( tra( "'No blurb found with the name: ')".$pParams['blurb_guid'] ) );
 		$ret = "FAIL";
