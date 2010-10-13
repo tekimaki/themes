@@ -1,6 +1,13 @@
 /* $Header: /cvsroot/bitweaver/_bit_themes/css/default.css,v 1.4 2009/11/09 15:51:10 wjames5 Exp $ */
 /* site structure */
-#wrapper {clear:both}
+/* styles for anchoring footer to browser window */
+html                { height:100%; }
+body                { height:100%; margin:0; padding:0;}
+#outerwrapper       { min-height:100%; position:relative; }
+#container:after    { content: ".";  display: block; height: 0; overflow:hidden; clear: both; visibility: hidden; }
+/* padding on wrapper and height on footer determines the footer height which is required for js-free footer anchoring */
+#wrapper            { padding-bottom:100px; clear:both}
+#footer             { height:100px; position:absolute; margin-top:-100px;}
 
 /* modules */
 .module       {padding:0.5em; margin:0.5em;}
