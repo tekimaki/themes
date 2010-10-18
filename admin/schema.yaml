@@ -1,14 +1,14 @@
 ---
 themes: 
-  version: 2.0.0
+  version: 2.0.1
   required: true
   requirements: 
     liberty: 
-      min: 2.1.4
+      min: 2.1.7
     users: 
-      min: 2.1.0
+      min: 2.1.4
     kernel: 
-      min: 2.0.0
+      min: 2.1.0
     languages: 
       min: 2.0.0
   description: >
@@ -48,6 +48,9 @@ themes:
   sequences: 
     themes_layouts_module_id_seq: 
       start: 1
+  plugin_apis:
+    function:
+      - module_display
   preferences: 
     site_slide_style: basic
     style: basic
