@@ -1,6 +1,7 @@
 {* $Header$ *}
 {strip}
-{form legend="Theme Settings"}
+{form}
+{legend legend="Theme Settings"}
 	<input type="hidden" name="page" value="{$page}" />
 	<div class="row">
 		{formlabel label="Display action links as" for="site_biticon_display_style"}
@@ -47,5 +48,6 @@
 	<div class="row submit">
 		<input type="submit" name="change_prefs" value="{tr}Apply Settings{/tr}" />
 	</div>
+{/legend}
 {/form}
 {/strip}
