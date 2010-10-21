@@ -60,3 +60,12 @@ themes:
     site_bot_bar: 'y'
     menu_languages: n
     menu_users: n
+  plugins:
+    themes:
+      name: Themes Package
+      handler_file: BitTheme.php
+      description: Applied when user themes are enabled; See theme pkg administration to enable.
+      api_handlers:
+        function:
+		  content_display: themes_content_display
+		  content_list: themes_content_list
