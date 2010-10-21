@@ -61,8 +61,8 @@ themes:
     menu_languages: n
     menu_users: n
   plugins:
-    themes:
-      name: Themes Package
+    user_themes:
+      name: User Themes
       handler_file: BitTheme.php
       description: Applied when user themes are enabled; See theme pkg administration to enable.
       api_handlers:

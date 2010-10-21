@@ -9,6 +9,7 @@ $gBitSystem->registerPackage( $registerHash );
 
 define( 'DEFAULT_ICON_STYLE', $gBitSystem->getConfig( 'default_icon_style', 'tango' ) );
 
+/*
 $gLibertySystem->registerService( 
 	LIBERTY_SERVICE_THEMES, 
 	THEMES_PKG_NAME, 
@@ -18,6 +19,7 @@ $gLibertySystem->registerService(
 	),
 	array( 'description' => 'Applied when user themes are enabled; See theme pkg administration to enable.' )
 );
+*/
 
 require_once( THEMES_PKG_PATH."BitThemes.php" );
 global $gBitThemes;
