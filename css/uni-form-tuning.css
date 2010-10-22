@@ -27,3 +27,7 @@ form .servicetabs .formlabel,
 form .servicetabs .forminput {width:auto; float:none; display:block}
 form .servicetabs .formhelp {margin-left:0px}
 
+/* large table forms */
+form table select,
+form table .selectInput	{ width:auto; float:none; }
+
