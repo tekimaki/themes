@@ -166,7 +166,7 @@ function smarty_function_html_select_time($params, &$gBitSmarty)
 	// -    print $html_result;
 	// +    print '<span dir="ltr">'.$html_result.'</span>';
 	
-    $html_result = '<span dir="ltr">' . $html_result . '</span>';
+    $html_result = '<span dir="ltr" class="timeSelect">' . $html_result . '</span>';
     
     return $html_result;
 }

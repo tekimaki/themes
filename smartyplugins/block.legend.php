@@ -14,13 +14,17 @@
  *           - legend      (optional) - text that appears in the legend
  */
 function smarty_block_legend($params, $content, &$gBitSmarty) {
+	// default to use inlineLabels in uniForm
+	if( !$params['floathelp'] ){
+		$params['class'] = !empty( $params['class'] )?$params['class'].' inlineLabels':'inlineLabels';
+	}
 	if( $content ) {
 		$attributes = '';
 		$attributes .= !empty( $params['class'] ) ? ' class="'.$params['class'].'" ' : '' ;
 		$attributes .= !empty( $params['id'] ) ? ' id="'.$params['id'].'" ' : '' ;
 		$ret = '<fieldset '.$attributes.'><legend>'.tra( $params['legend'] ).'</legend>';
 		$ret .= $content;
-		$ret .= '<div class="clear"></div></fieldset>';
+		$ret .= '</fieldset>';
 		return $ret;
 	}
 }

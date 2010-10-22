@@ -247,6 +247,8 @@ function smarty_function_html_select_date($params, &$gBitSmarty)
   	  }
     }
 
+	$html_result = '<span class="dateSelect">'.$html_result.'</span>';
+
     return $html_result;
 }
 

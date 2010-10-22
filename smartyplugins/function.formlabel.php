@@ -22,6 +22,7 @@ function smarty_function_formlabel( $params,&$gBitSmarty ) {
 				$name = $val;
 				break;
 			case 'mandatory':
+			case 'required':
 				$mandatory = true;
 			default:
 				if( $val ) {
@@ -33,10 +34,14 @@ function smarty_function_formlabel( $params,&$gBitSmarty ) {
 	$html = '<div class="formlabel';
 	if (isset($mandatory) && $mandatory) {
 		$html .= ' formmandatory';
+		$html .= ' required';
 	}
 	$html .= '">';
 	if( $atts != '' ) {
 		$html .= '<label'.$atts.'>';
+	}
+	if (isset($mandatory) && $mandatory) {
+		$html .= '<em>Required</em> ';
 	}
 	if( empty( $params['no_translate'] ) ) {
 		$html .= tra( $name );
