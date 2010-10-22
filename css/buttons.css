@@ -1,0 +1,42 @@
+a.button, input.button, span.button,.button .button-over { 
+    color:#fff;
+    cursor:pointer;
+    font-weight:bold;
+    display:inline-block;
+    padding:8px 10px 7px; 
+    margin-right:5px;
+    text-transform:uppercase;
+    font-family: Helvetica;
+    letter-spacing:1px; 
+    font-size:11px;
+    line-height:12px;
+    position:relative;
+    border:0; 
+    text-shadow:0 1px 0 rgba(0,0,0,.3);
+    border-radius:         5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius:    5px;
+    -o-border-radius:      5px;
+    -khtml-border-radius:  5px;
+    background: #88bfe8; /* old browsers */
+    background: -moz-linear-gradient(top, #88bfe8 0%, #70b0e0 100%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#88bfe8), color-stop(100%,#70b0e0)); /* webkit */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#88bfe8', endColorstr='#70b0e0',GradientType=0 ); /* ie */
+}
+
+a.mini, input.mini {
+    padding:5px;
+    font-size:9px;
+    letter-spacing:normal; 
+}
+
+.button .icon {
+    vertical-align:middle; margin:-5px 5px 0 0; 
+}
+
+a.mini .icon, input.mini .icon{
+	margin: -2px 2px 0 0
+}
+
+.button .button-over {opacity:0; filter:alpha(opacity=0); position:absolute; z-index:10; cursor:pointer; top:0; left:0; }
+
