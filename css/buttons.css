@@ -18,10 +18,10 @@ a.button, input.button, span.button,.button .button-over {
     -moz-border-radius:    5px;
     -o-border-radius:      5px;
     -khtml-border-radius:  5px;
-    background: #88bfe8; /* old browsers */
-    background: -moz-linear-gradient(top, #88bfe8 0%, #70b0e0 100%); /* firefox */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#88bfe8), color-stop(100%,#70b0e0)); /* webkit */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#88bfe8', endColorstr='#70b0e0',GradientType=0 ); /* ie */
+    background: #b0b0b0; /* old browsers */
+    background: -moz-linear-gradient(top, #b0b0b0 0%, #999999 100%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b0b0b0), color-stop(100%,#999999)); /* webkit */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b0b0b0', endColorstr='#999999',GradientType=0 ); /* ie */
 }
 
 a.mini, input.mini {
