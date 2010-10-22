@@ -1,0 +1,29 @@
+/*uni-form exceptions */
+/* listings checkform */
+form.checkform ul,
+#checkform ul {float:none; width:auto}
+
+form.checkform .selectInput, 
+#checkform select {float:right; width:auto}
+
+/* minifind */
+form.minifind input {float:none}
+form.minifind fieldset {padding:0.5em 0.25em}
+form.minifind .icon {margin-right:5px}
+
+/* fckeditor likes an extra percent */
+form .inlineLabels iframe{ width:65%; }
+
+form .row .rt-edit { border-bottom:none; }
+
+/* date and time styles */
+form .inlineLabels .dateSelect select,
+form .inlineLabels .timeSelect select	{ width:auto; float:none; }
+
+/* small right edit panel */
+form .servicetabs label,
+form .servicetabs .label,	
+form .servicetabs .formlabel, 
+form .servicetabs .forminput {width:auto; float:none; display:block}
+form .servicetabs .formhelp {margin-left:0px}
+
