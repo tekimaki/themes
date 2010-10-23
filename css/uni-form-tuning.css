@@ -31,3 +31,5 @@ form .servicetabs .formhelp {margin-left:0px}
 form table select,
 form table .selectInput	{ width:auto; float:none; }
 
+form .buttonHolder	{border:none;}
+
