@@ -24,7 +24,7 @@ a.button, input.button, span.button,.button .button-over {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b0b0b0', endColorstr='#999999',GradientType=0 ); /* ie */
 }
 
-a.mini, input.mini {
+a.mini, input.mini, span.mini {
     padding:5px;
     font-size:9px;
     letter-spacing:normal; 
