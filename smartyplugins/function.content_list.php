@@ -7,6 +7,8 @@
  */
 
 function smarty_function_content_list( $pParams, &$gBitSmarty ) {
+	global $gLibertySystem;
+
 	// at a minimum, return blank string (not empty) so we still replace the tag
 	$ret = ' ';
 
@@ -19,8 +21,21 @@ function smarty_function_content_list( $pParams, &$gBitSmarty ) {
 
 	$cListRequest = $pParams;
 
-	// now that we have all the offsets, we can get the content list
-	include_once( LIBERTY_PKG_PATH.'get_content_list_inc.php' );
+	if( !empty( $pParams['content_type_guid'] ) && !empty( $gLibertySystem->mContentTypes[$pParams['content_type_guid']] ) ){
+		$pParam['sort_mode'] = !empty( $pParams['sort_mode'] )?$pParams['sort_mode']:'last_modified';
+		$class = $gLibertySystem->mContentTypes[$pParams['content_type_guid']]['handler_class'];
+		$pkg = $gLibertySystem->mContentTypes[$pParams['content_type_guid']]['handler_package'];
+		$classFile = $gLibertySystem->mContentTypes[$pParams['content_type_guid']]['handler_file'];
+		require_once( constant( strtoupper( $pkg ).'_PKG_PATH' ).$classFile );
+		$obj = new $class();
+		if( $list = $obj->getList( $pParams ) ){
+			$contentList = $list['data'];
+		}
+	}
+	else{
+		// now that we have all the offsets, we can get the content list
+		include_once( LIBERTY_PKG_PATH.'get_content_list_inc.php' );
+	}
 
 	if( !empty( $contentList ) ){
 		$gBitSmarty->assign( 'contentList',$contentList );
