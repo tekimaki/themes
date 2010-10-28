@@ -7,8 +7,8 @@
 				{formlabel label="Customized layout" for="module_package"}
 				{forminput}
 					<select name="module_package" id="module_package" onchange="this.form.submit();">
-						{foreach key=name item=package from=$gBitSystem->mPackages}
-							{if $package.installed and ($package.activatable or $package.tables)}
+						{foreach key=name item=package from=$gBitSystem->mPackagesConfig}
+							{if $gBitSystem->isPackageActive($name)}
 								<option value="{$name}" {if $module_package == $name}selected="selected"{/if}>
 									{if $name eq 'kernel'}
 										{tr}Site Default{/tr}
