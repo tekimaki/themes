@@ -28,7 +28,7 @@
 					{/forminput}
 				</div>
 
-				<div class="row submit">
+				<div class="buttonHolder row submit">
 					<input type="submit" name="menu_settings" value="{tr}Change preferences{/tr}" />
 				</div>
 			{/form}
@@ -46,7 +46,7 @@
 							{/forminput}
 						</div>
 					{/foreach}
-					<div class="row submit">
+					<div class="buttonHolder row submit">
 						<input type="submit" name="menu_js_settings" value="{tr}Change preferences{/tr}" />
 					</div>
 				{/form}
@@ -72,7 +72,7 @@
 					<tfoot>
 						<tr>
 							<td colspan="3">
-								<div class="row submit">
+								<div class="buttonHolder row submit">
 									<input type="submit" name="update_menus" value="{tr}Update Menus{/tr}" />
 								</div>
 							</td>

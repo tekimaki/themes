@@ -132,7 +132,7 @@
 		
 	{/jstabs}
 	
-	<div class="row submit">
+	<div class="buttonHolder row submit">
 		<input type="submit" name="reset_columns" value="{tr}Reset column settings{/tr}" />
 		<input type="submit" name="column_control" value="{tr}Save settings{/tr}" />
 	</div>

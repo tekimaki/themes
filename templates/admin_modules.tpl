@@ -11,7 +11,7 @@
 		</div>
 	{/foreach}
 
-	<div class="row submit">
+	<div class="buttonHolder row submit">
 		<input type="submit" name="module_settings" value="{tr}Change preferences{/tr}" />
 	</div>
 {/form}

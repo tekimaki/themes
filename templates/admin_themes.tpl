@@ -45,7 +45,7 @@
 		</div>
 	{/foreach}
 
-	<div class="row submit">
+	<div class="buttonHolder row submit">
 		<input type="submit" name="change_prefs" value="{tr}Apply Settings{/tr}" />
 	</div>
 {/legend}

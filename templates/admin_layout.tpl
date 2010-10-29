@@ -44,7 +44,7 @@
 			{/if}
 
 			<noscript>
-				<div class="row submit">
+				<div class="buttonHolder row submit">
 					<input type="submit" name="fSubmitCustomize" value="{tr}Customize{/tr}" />
 				</div>
 			</noscript>
@@ -227,7 +227,7 @@
 				{/forminput}
 			</div>
 
-			<div class="row submit">
+			<div class="buttonHolder row submit">
 				<input type="submit" name="ColumnTabSubmit" value="{tr}Assign{/tr}" />
 			</div>
 		{/form}
@@ -323,7 +323,7 @@
 				{/forminput}
 			</div>
 
-			<div class="row submit">
+			<div class="buttonHolder row submit">
 				<input type="submit" name="CenterTabSubmit" value="{tr}Assign{/tr}" />
 			</div>
 		{/form}
