@@ -33,3 +33,8 @@ form table .selectInput	{ width:auto; float:none; }
 
 form .buttonHolder	{border:none;}
 
+/* admin forms */
+/* kernel */
+.kernel_packageplugins label .icon {float:right; margin:0;}
+.kernel_packageplugins ul li label .icon {float:none;}
+.kernel_packageplugins .inlineLabels .formhelp	{margin:0; clear:none;}
