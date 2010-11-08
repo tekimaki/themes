@@ -165,14 +165,14 @@ class BitSmarty extends Smarty {
 	 * @return void
 	 */
 	function verifyCompileDir() {
-		global $gBitSystem, $gBitLanguage, $bitdomain, $gBitThemes;
+		global $gBitSystem, $gBitLanguage, $gBitThemes;
 		if( !defined( "TEMP_PKG_PATH" )) {
 			$temp = BIT_ROOT_PATH . "temp/";
 		} else {
 			$temp = TEMP_PKG_PATH;
 		}
 		$style = $gBitThemes->getStyle();
-		$endPath = "$bitdomain/$style/".$gBitLanguage->mLanguage;
+		$endPath = "$style/".$gBitLanguage->mLanguage;
 
 		// Compile directory
 		$compDir = $temp . "templates_c/$endPath";
