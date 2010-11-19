@@ -12,16 +12,23 @@
 {* JAVASCRIPT *}
 <script type="text/javascript">/* <![CDATA[ */
 	BitSystem = {ldelim}
+{strip}
 		"urls":{ldelim}
 		{foreach from=$gBitSystem->mPackagesConfig item=pkgInfo key=pkg}
 			{if $gBitSystem->isPackageActive( $pkg )}
 				"{$pkg}":"{$pkgInfo.url}",
 			{/if}
 		{/foreach}
+		{foreach from=$gBitSystem->mPackagePluginsConfig item=pluginInfo key=plugin}
+			{if $gBitSystem->isPluginActive( $plugin )}
+				"{$pluginInfo.package_guid}_{$plugin}":"{$gBitSystem->getPackagePluginUrl($pluginInfo)}",
+			{/if}
+		{/foreach}
 			"root":"{$smarty.const.BIT_ROOT_URL}",
 			"cookie":"{$smarty.const.BIT_ROOT_URL}",
 			"iconstyle":"{$smarty.const.THEMES_PKG_URL}icon_styles/{$smarty.const.DEFAULT_ICON_STYLE}/"
 		{rdelim}
+{/strip}
 	{rdelim};
 	var bitCookiePath = "{$smarty.const.BIT_ROOT_URL}";
 	var bitCookieDomain = "";
