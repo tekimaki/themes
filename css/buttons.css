@@ -38,5 +38,7 @@ a.mini .icon, input.mini .icon{
 	margin: -2px 2px 0 0
 }
 
+a.button:hover, input.button:hover, span.button:hover, .button:hover .button-over:hover{}
+
 .button .button-over {opacity:0; filter:alpha(opacity=0); position:absolute; z-index:10; cursor:pointer; top:0; left:0; }
 
