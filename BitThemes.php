@@ -1367,25 +1367,27 @@ class BitThemes extends BitBase {
 	 */
 	function loadAuxFile( $pFile = NULL, $pType = NULL, $pPosition = 1, $pAuxFile = TRUE ) {
 		if( !empty( $pFile ) && !empty( $pType )) {
-			if( $pFile = realpath( $pFile )) {
+			if( $pRealFile = realpath( $pFile )) {
 				if( $pAuxFile ) {
 					$fileHash =& $this->mAuxFiles;
 				} else {
 					$fileHash =& $this->mRawFiles;
 				}
 
-				if( !$this->isAuxFile( $pFile, $pType, $pAuxFile )) {
+				if( !$this->isAuxFile( $pRealFile, $pType, $pAuxFile )) {
 					// if the selected position is occupied, we'll try to load it in the next position
 					if( !empty( $fileHash[$pType][$pPosition] )) {
-						$this->loadAuxFile( $pFile, $pType, ++$pPosition, $pAuxFile );
+						$this->loadAuxFile( $pRealFile, $pType, ++$pPosition, $pAuxFile );
 					} else {
-						$fileHash[$pType][$pPosition] = $pFile;
+						$fileHash[$pType][$pPosition] = $pRealFile;
 						// ensure that hash is sorted correctly
 						ksort( $fileHash[$pType] );
 
 						return TRUE;
 					}
 				}
+			} else {
+				error_log("Missing File: " . $pFile );
 			}
 		}
 		return FALSE;
