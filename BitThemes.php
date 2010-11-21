@@ -1245,6 +1245,15 @@ class BitThemes extends BitBase {
 				}
 			}
 
+			// jQuery gets an extra path.
+			if ($ajaxLib == 'jquery') {
+				if( defined( 'IS_LIVE' ) && IS_LIVE ) {
+					$pLibPath .= 'mini/';
+				} else {
+					$pLibPath .= 'full/';
+				}
+			}
+
 			if( !$this->isAjaxLib( $ajaxLib )) {
 				// load core javascript files for ajax libraries
 				switch( $ajaxLib ) {
@@ -1258,11 +1267,6 @@ class BitThemes extends BitBase {
 						break;
 					case 'jquery':
 						$joined = FALSE;
-						if( defined( 'IS_LIVE' ) && IS_LIVE ) {
-							$pLibPath .= 'full/';
-						} else {
-							$pLibPath .= 'full/';
-						}
 						$this->loadJavascript( $pLibPath.'jquery.js', FALSE, $pos++, $joined );
 						break;
 					case 'yui':
