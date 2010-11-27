@@ -60,8 +60,7 @@ if( $gBitThemes->mLayout && empty( $gHideModules )) {
 					} else {
 						$template = array_pop( explode(  '/', $r['module_rsrc'] ) );
 
-						// using $module_rows, $module_params and $module_title is deprecated. please use $moduleParams hash instead
-						global $module_rows, $module_params, $module_title, $gBitLanguage;
+						global $gBitLanguage;
 
 						$cacheDir = TEMP_PKG_PATH.'modules/cache/';
 						if( !is_dir( $cacheDir )) {
