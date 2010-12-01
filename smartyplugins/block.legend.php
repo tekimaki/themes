@@ -16,13 +16,16 @@
 function smarty_block_legend($params, $content, &$gBitSmarty) {
 	// default to use inlineLabels in uniForm
 	if( !$params['floathelp'] ){
-		$params['class'] = !empty( $params['class'] )?$params['class'].' inlineLabels':'inlineLabels';
+		$params['class'] = !empty( $params['class'] )?$params['class'].' ':' ';
 	}
 	if( $content ) {
-		$attributes = '';
-		$attributes .= !empty( $params['class'] ) ? ' class="'.$params['class'].'" ' : '' ;
+		$attributes = ' class="';
+		$attributes .= !empty( $params['layout'] )?$params['layout'].' ':' inlineLabels ';
+		$attributes .= !empty( $params['class'] ) ?$params['class'].' ' : '' ;
+		$attributes .= '" ';
 		$attributes .= !empty( $params['id'] ) ? ' id="'.$params['id'].'" ' : '' ;
-		$ret = '<fieldset '.$attributes.'><legend>'.tra( $params['legend'] ).'</legend>';
+		$legendAttributes .= !empty( $params['legendclass'] ) ? ' '.$params['legendclass'].' ' : '' ;
+		$ret = '<fieldset '.$attributes.'><div class="legend '.$legendAttributes.'">'.tra( $params['legend'] ).'</div>';
 		$ret .= $content;
 		$ret .= '</fieldset>';
 		return $ret;
