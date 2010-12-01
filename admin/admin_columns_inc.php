@@ -38,6 +38,7 @@ $displayModes = array(
 	"edit"    => "Edit areas such as creating a wiki page",
 	"upload"  => "Uploading files to a file or image gallery",
 	"admin"   => "Package administration",
+	"error"   => "Errors",
 );
 $gBitSmarty->assign( 'displayModes', $displayModes );
 
