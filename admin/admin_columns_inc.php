@@ -35,9 +35,11 @@ $gBitSmarty->assign( 'hideableAreas', $hideableAreas );
 $displayModes = array(
 	"display" => "Display content",
 	"list"    => "Display listings such as galleries",
+	"create"  => "Edit areas during create",
 	"edit"    => "Edit areas such as creating a wiki page",
-	"upload"  => "Uploading files to a file or image gallery",
+	"manage"  => "Lower level administration",
 	"admin"   => "Package administration",
+	"upload"  => "Uploading files to a file or image gallery",
 	"error"   => "Errors",
 );
 $gBitSmarty->assign( 'displayModes', $displayModes );
