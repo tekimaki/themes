@@ -99,7 +99,7 @@
 							<td></td>
 							{foreach from=$hideableAreas item=areaname key=area name=areas}
 								{foreach from=$displayModes item=modename key=mode name=modes}
-									<th><abbr title="{$mode}">{$mode|replace:"display":"Di"|replace:"list":"Li"|replace:"edit":"Ed"|replace:"upload":"Up"|replace:"admin":"Ad"|replace:"error":"Er"}</abbr></th>
+									<th><abbr title="{$mode}">{$mode|replace:"display":"Di"|replace:"list":"Li"|replace:"create":"Cr"|replace:"edit":"Ed"|replace:"upload":"Up"|replace:"manage":"Mg"|replace:"admin":"Ad"|replace:"error":"Er"}</abbr></th>
 								{/foreach}
 							{/foreach}
 						</tr>
