@@ -1218,11 +1218,11 @@ class BitThemes extends BitBase {
 	 * @return TRUE on success, FALSE on failure - mErrors will contain reason for failure
 	 */
 	function loadAjax( $pAjaxLib, $pLibHash=NULL, $pLibPath=NULL, $pPack = FALSE ) {
-		global $gBitSmarty, $gSniffer;
+		global $gBitSmarty, $gSniffer, $gBitSystem;
 		$ret = FALSE;
 		$joined = TRUE;
 		$ajaxLib = strtolower( $pAjaxLib );
-		if( $this->isJavascriptEnabled() ) {
+		if( $this->isJavascriptEnabled() || $gBitSystem->getConfig('themes_include_javascript' ) ) {
 			// set the javascript lib path if not set yet
 			if( empty( $pLibPath )) {
 				switch( $ajaxLib ) {
