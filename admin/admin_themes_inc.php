@@ -40,6 +40,10 @@ $themeSettings = array(
 		'label' => 'Disable All Package CSS',
 		'note' => 'If checked, all css that is automatically included by packages will be disabled. If you want to include some of the package css it is recommended you copy that css to your theme css file.',
 	),
+	'themes_include_javascript' => array(
+		'label' => 'Force include javascript',
+		'note' => 'If not checked the system waits for a javascript cookie to be set and detected before sending most javascript. Check this box to force js inclusion.',
+	),
 );
 $gBitSmarty->assign( 'themeSettings', $themeSettings );
 
