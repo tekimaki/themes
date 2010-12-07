@@ -44,6 +44,10 @@ $themeSettings = array(
 		'label' => 'Force include javascript',
 		'note' => 'If not checked the system waits for a javascript cookie to be set and detected before sending most javascript. Check this box to force js inclusion.',
 	),
+	'edit_success_return_to_form' => array(
+		'label' => 'Display success return to form',
+		'note' => 'If checked, the system will display a success message when a edit page is successfully submitted. If not checked, it will redirect to a view page.',
+	),
 );
 $gBitSmarty->assign( 'themeSettings', $themeSettings );
 
