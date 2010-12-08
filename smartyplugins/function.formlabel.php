@@ -23,7 +23,9 @@ function smarty_function_formlabel( $params,&$gBitSmarty ) {
 				break;
 			case 'mandatory':
 			case 'required':
-				$mandatory = true;
+				if( $params['required'] ){
+					$mandatory = true;
+				}
 			default:
 				if( $val ) {
 					$atts .= ' '.$key.'="'.$val.'"';
