@@ -45,12 +45,14 @@ function smarty_function_slideshow( $pParams, &$gBitSmarty ) {
 			}
 			
 			if( !empty( $att['is_mime'] )) {	
+				$imageSize = !empty( $pParams['image_size'] ) && !empty( $att['thumbnail_url'][$pParams['image_size']] ) ?$pParams['image_size']:'large';
+				$thumbnailSize = !empty( $pParams['thumbnail_size'] ) && !empty( $att['thumbnail_url'][$pParams['thumbnail_size']] ) ?$pParams['thumbnail_size']:'small';
 				$imageCount++;
 				//If first image, display an image anchor else display a hidden anchor
 				if($imageCount == 1){
-					$ret = $ret.' <a href="'.BIT_BASE_URI.$att['thumbnail_url']['large'].'" rel="slideshow_'.$pParams['rel'].'" title="'.$imageParams['image_caption'].'"><img border=0 src="'.BIT_BASE_URI.$att['thumbnail_url']['small'].'"/></a> ';
+					$ret = $ret.' <a href="'.BIT_BASE_URI.$att['thumbnail_url'][$imageSize].'" rel="slideshow_'.$pParams['rel'].'" title="'.$imageParams['image_caption'].'"><img border=0 src="'.BIT_BASE_URI.$att['thumbnail_url'][$thumbnailSize].'"/></a> ';
 				}else{
-					$ret = $ret.' <a href="'.BIT_BASE_URI.$att['thumbnail_url']['large'].'" rel="slideshow_'.$pParams['rel'].'" title="'.$imageParams['image_caption'].'" visibility="hidden"></a> ';
+					$ret = $ret.' <a href="'.BIT_BASE_URI.$att['thumbnail_url'][$imageSize].'" rel="slideshow_'.$pParams['rel'].'" title="'.$imageParams['image_caption'].'" visibility="hidden"></a> ';
 				}
 			}
 		}
