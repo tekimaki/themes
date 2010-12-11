@@ -1,2 +1,2 @@
 <div id="spinner" style="z-index:1501; position:absolute; height: 50px; width:250px; line-height:50px; padding:25px 0; text-align:center; display:none;">{biticon ipackage=liberty iname=busy iexplain=Loading style="vertical-align:middle;"}&nbsp;&nbsp;&nbsp;&nbsp;{tr}Loading{/tr}&hellip;</div>
-<div id="spinner_overlay" style="z-index:1500;position:absolute;top:0px;left:0px;display:none;"></div>
+<div id="spinner_overlay" style="z-index:1500;position:fixed;top:0px;left:0px;height:100%;width:100%;display:none;"></div>
