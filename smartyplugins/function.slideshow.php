@@ -30,7 +30,7 @@ function smarty_function_slideshow( $pParams, &$gBitSmarty ) {
 	}
 	
 	//Initiate the slideshow code in js
-	$ret = $ret.' <script>var $jq = jQuery.noConflict();$jq(document).ready(function(){$jq("a[rel=\'slideshow_'.$pParams['rel'].'\']").colorbox({slideshow:false,slideshowAuto:false});});</script>';
+	$ret = $ret.' <script>var $jq = jQuery.noConflict();$jq(document).ready(function(){$jq("a[rel=\'slideshow_'.$pParams['rel'].'\']").colorbox({slideshow:false,slideshowAuto:false,current:\'\',onComplete:function(){var titleheight = $jq(\'#cboxTitle\').height();if (titleheight < 25){titleheight = 25;}titleheight = titleheight + 12;$jq(\'#colorbox\').height($jq(\'#colorbox\').height() + titleheight);$jq(\'#cboxWrapper\').height($jq(\'#cboxWrapper\').height() + titleheight);$jq(\'#cboxMiddleLeft\').height($jq(\'#cboxMiddleLeft\').height() +titleheight);$jq(\'#cboxMiddleRight\').height($jq(\'#cboxMiddleRight\').height() +titleheight);$jq(\'#cboxContent\').height($jq(\'#cboxContent\').height() + titleheight);$jq(\'#cboxLoadedContent\').height($jq(\'#cboxLoadedContent\').height() +titleheight);} });});</script>';	
 	//Keep track of the image counts in the slideshow
 	$imageCount = 0;
 	foreach ($pParams['imagesHash'] AS $key=>$imageParams){
