@@ -1248,7 +1248,7 @@ class BitThemes extends BitBase {
 			// jQuery gets an extra path.
 			if ($ajaxLib == 'jquery') {
 				if( defined( 'IS_LIVE' ) && IS_LIVE ) {
-					$pLibPath .= 'mini/';
+					$pLibPath .= 'min/';
 				} else {
 					$pLibPath .= 'full/';
 				}
