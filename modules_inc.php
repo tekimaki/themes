@@ -112,6 +112,16 @@ if( $gBitThemes->mLayout && empty( $gHideModules )) {
 				}
 			}
 			$gBitSmarty->assign_by_ref( $column.'_modules', $gBitThemes->mLayout[$column] );
+			// prerender the left and right cols 
+			// if fetch is empty the column will not be rendered at all - solving numerous layout issues
+			switch( $column ){
+			case 'l':
+				$gBitSmarty->assign( 'l_column', $gBitSmarty->fetch( 'bitpackage:kernel/bit_left.tpl' ) );
+				break;
+			case 'r':
+				$gBitSmarty->assign( 'r_column', $gBitSmarty->fetch( 'bitpackage:kernel/bit_right.tpl' ) );
+				break;
+			}
 		}
 	}
 }
