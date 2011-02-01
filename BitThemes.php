@@ -425,9 +425,9 @@ class BitThemes extends BitBase {
 	 * @return none
 	 * @access public
 	 */
-	function loadLayout( $pParamHash = NULL ) {
+	function loadLayout( $pParamHash = NULL, $pForce = FALSE ) {
 		global $gBitSystem;
-		if( empty( $this->mLayout ) || !count( $this->mLayout )){
+		if( empty( $this->mLayout ) || !count( $this->mLayout ) || $pForce ){
 			$this->mLayout = $this->getLayout( $pParamHash );
 
 			/**
