@@ -73,6 +73,8 @@ function smarty_function_html_select_date($params, &$gBitSmarty)
     /* String printed between the different fields. */
     $field_separator = "\n";
 	$time = time();
+	/* Default to use local time offset */
+	$utc = FALSE;
 
 
     extract($params);
@@ -85,7 +87,9 @@ function smarty_function_html_select_date($params, &$gBitSmarty)
 		$time = smarty_make_timestamp($time);
 		$date = new BitDate(0);
 		// sets the offset for the user - necessary because BitDate is a bitwack
-		$offset = $date->get_display_offset();
+		if( !$utc ){
+			$offset = $date->get_display_offset();
+		}
 		$time = $date->getDisplayDateFromUTC( $time );
   		$time = $gBitSystem->mServerTimestamp->strftime('%Y-%m-%d', smarty_make_timestamp($time), TRUE);
   	}
