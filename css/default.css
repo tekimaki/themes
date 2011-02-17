@@ -54,5 +54,18 @@ table        {border-collapse:collapse; border-spacing:0; padding:0; margin:0; w
 .icon,.icon:hover,
 a.icon,a.icon:hover {border:0px;}
 
+/* pagination */
+.pagination			{text-align:left; padding:15px 0px;}
+.numbered_pagination {text-align:left;}
+.numbered_pagination div { background-color:#eaeaea; border:1px solid #c9c9c9; color:#626262; font-size:14px; cursor:pointer; }
+.numbered_pagination .page_text { float:left; margin:5px 10px 0 5px; border:0 none; background:none; }
+.numbered_pagination .page_num, 
+.numbered_pagination .page_num_current,
+.numbered_pagination .disabled { color:#c9c9c9; border-color:#e3e3e3; cursor:auto; float:left; padding:3px 6px; margin-right:7px; display:block;} 
+.numbered_pagination .page_num:hover,
+.numbered_pagination .page_num_current { color:#c9c9c9; background-color:#626262; border-color:#626262; }
+.numbered_pagination .page_num:hover a,
+.numbered_pagination .page_num:hover a:hover {text-decoration:none; color:#c9c9c9; }
+
 /* IE hacks */
 #header		{z-index:5000} /* For IE6; Required to get top menu overlapping all body elements. Relatively harmless for other browsers, YMMV */
