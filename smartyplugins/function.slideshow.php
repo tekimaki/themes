@@ -50,11 +50,11 @@ function smarty_function_slideshow( $pParams, &$gBitSmarty ) {
 				$imageCount++;
 				//If first image, display an image anchor else display a hidden anchor
 				if($imageCount == 1){
-					$ret = $ret.' <a href="'.BIT_BASE_URI.$att['thumbnail_url'][$imageSize].'" rel="slideshow_'.$pParams['rel'].'" title="'.$imageParams['image_caption'].'"><img border=0 src="'.BIT_BASE_URI.$att['thumbnail_url'][$thumbnailSize].'"/></a> ';
+					$ret = $ret.' <a id="image-'.$att['content_id'].'" href="'.BIT_BASE_URI.$att['thumbnail_url'][$imageSize].'" rel="slideshow_'.$pParams['rel'].'" title="'.$imageParams['image_caption'].'"><img border=0 src="'.BIT_BASE_URI.$att['thumbnail_url'][$thumbnailSize].'"/></a> ';
 					
 					//Gallery link to open the slideshow from a link
 					if(!empty($pParams['gallery_link'])){
-						$pParams['gallery_link'] = ' <a href="'.BIT_BASE_URI.$att['thumbnail_url'][$imageSize].'" rel="slideshow_'.$pParams['rel'].'" title="'.$imageParams['image_caption'].'">Click for gallery view</a>';
+						$pParams['gallery_link'] = ' <a href="JAVASCRIPT:void(0)" onClick="$jq(\'#image-'.$att['content_id'].'\').click();">Click for gallery view</a>';
 					}
 					
 				}else{
